@@ -1,4 +1,4 @@
 # def main():
-class Currency:
+class CurrencyConverter:
     def __init__(self, equation):
         self.equation = equation

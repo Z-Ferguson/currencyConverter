@@ -25,3 +25,8 @@ def test_subtracting_currency():
     a = Currency('USD', 8)
     b = Currency('USD', 4)
     assert a - b == Currency('USD', 4)
+
+def test_multiplying_currency():
+    a = Currency('USD', 6)
+    b = 5
+    assert a * b == Currency('USD', 30)

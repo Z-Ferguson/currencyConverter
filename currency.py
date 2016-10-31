@@ -44,3 +44,7 @@ class Currency:
         else:
             raise DifferentCurrencyCodeError()
             pass
+
+    def __mul__(self, c):
+        return Currency(self.currency_code, (self.value) * c)
+        pass
