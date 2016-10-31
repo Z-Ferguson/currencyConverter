@@ -31,16 +31,16 @@ class Currency:
             return True
         return False
 
-    # def __add__(self, other):
-    #     if self.currency_code == other.currency_code:
-    #         return Currency(self.currency_code, self.value + other.value)
-    #     else:
-    #         raise DifferentCurrencyCodeError()
-    #         pass
-    #
-    # def __sub__(self, other):
-    #     if self.currency_code == other.currency_code:
-    #         return Currency(self.currency_code, self.value - other.value)
-    #     else:
-    #         raise DifferentCurrencyCodeError
-    #         pass
+    def __add__(self, other):
+        if self.currency_code == other.currency_code:
+            return Currency(self.currency_code, self.value + other.value)
+        else:
+            raise DifferentCurrencyCodeError()
+            pass
+
+    def __sub__(self, other):
+        if self.currency_code == other.currency_code:
+            return Currency(self.currency_code, self.value - other.value)
+        else:
+            raise DifferentCurrencyCodeError()
+            pass

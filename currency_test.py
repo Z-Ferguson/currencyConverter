@@ -16,7 +16,12 @@ def test_currency_code():
     b = Currency('Euro', 6)
     assert a != b
 
-# def test_adding_currency():
-#     a = Currency('USD', 4)
-#     b = Currency('USD', 5)
-#     assert a + b == ('USD', 9)
+def test_adding_currency():
+    a = Currency('USD', 4)
+    b = Currency('USD', 5)
+    assert a + b == Currency('USD', 9)
+
+def test_subtracting_currency():
+    a = Currency('USD', 8)
+    b = Currency('USD', 4)
+    assert a - b == Currency('USD', 4)
