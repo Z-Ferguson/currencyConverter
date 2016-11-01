@@ -30,3 +30,8 @@ def test_multiplying_currency():
     a = Currency('USD', 6)
     b = 5
     assert a * b == Currency('USD', 30)
+
+def test_currency_code_arg():
+    a = Currency('$6')
+    b = Currency('USD', 6)
+    assert a == b
