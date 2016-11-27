@@ -44,36 +44,36 @@ def test_code_error():
     assert eight_dollars * four_great_british_pounds
 
 
-# # CurrencyConverter object tests
-# currency_rates = CurrencyConverter({'USD': 1.0, 'EUR': .91, 'RUB': 64.42})
-#
-#
-# def test_usd_to_eur():
-#     usd_object = Currency('$15')
-#     assert currency_rates.convert(usd_object, 'EUR') == Currency('EUR', 13.65)
-#
-#
-# def test_rub_to_usd():
-#     rub_object = Currency('₽20')
-#     assert currency_rates.convert(rub_object, 'USD') == Currency('USD', 0.31)
-#
-#
-# def test_rub_to_eur():
-#     rub_object = Currency('₽45')
-#     assert currency_rates.convert(rub_object, 'EUR') == Currency('EUR', 0.64)
-#
-#
-# def test_eur_to_rub():
-#     eur_object = Currency('€4')
-#     assert currency_rates.convert(eur_object, 'RUB') == Currency('RUB', 283.16)
-#
-#
-# def test_eur_to_usd():
-#     eur_object = Currency('€23')
-#     assert currency_rates.convert(eur_object, 'USD') == Currency('USD', 25.27)
-#
-#
-# @raises(UnkownCurrencyCodeError)
-# def test_unkown_code():
-#     usd_object = Currency('$5')
-#     assert currency_rates.convert(usd_object, 'GBP')
+# CurrencyConverter object tests
+currency_rates = CurrencyConverter({'USD': 1.0, 'EUR': .91, 'RUB': 64.42})
+
+
+def test_usd_to_eur():
+    usd_object = Currency('$15')
+    assert currency_rates.convert(usd_object, 'EUR') == Currency('EUR', 13.65)
+
+
+def test_rub_to_usd():
+    rub_object = Currency('₽20')
+    assert currency_rates.convert(rub_object, 'USD') == Currency('USD', 0.31)
+
+
+def test_rub_to_eur():
+    rub_object = Currency('₽45')
+    assert currency_rates.convert(rub_object, 'EUR') == Currency('EUR', 0.64)
+
+
+def test_eur_to_rub():
+    eur_object = Currency('€4')
+    assert currency_rates.convert(eur_object, 'RUB') == Currency('RUB', 283.16)
+
+
+def test_eur_to_usd():
+    eur_object = Currency('€23')
+    assert currency_rates.convert(eur_object, 'USD') == Currency('USD', 25.27)
+
+
+@raises(UnkownCurrencyCodeError)
+def test_unkown_code():
+    usd_object = Currency('$5')
+    assert currency_rates.convert(usd_object, 'GBP')
