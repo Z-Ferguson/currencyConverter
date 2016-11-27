@@ -33,7 +33,7 @@ class Currency:
 
     def __mul__(self, m):
         return Currency(self.currency_code, (self.value) * m)
-        pass
+
 
 class DifferentCurrencyCodeError(Exception):
     pass
