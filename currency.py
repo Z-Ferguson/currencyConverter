@@ -7,8 +7,8 @@ class Currency:
             elif currency_code[0] == '€':
                 self.currency_code = 'EUR'
                 self.value = float(currency_code[1:])
-            elif currency_code[0] == '£':
-                self.currency_code = 'GBP'
+            elif currency_code[0] == '₽':
+                self.currency_code = 'RUB'
                 self.value = float(currency_code[1:])
         else:
             self.value = value
@@ -23,16 +23,24 @@ class Currency:
         if self.currency_code == other.currency_code:
             return Currency(self.currency_code, self.value + other.value)
         else:
-            raise Exception("DifferentCurrencyCodeError")
+            # raise Exception("DifferentCurrencyCodeError")
+            raise DifferentCurrencyCodeError()
 
     def __sub__(self, other):
         if self.currency_code == other.currency_code:
             return Currency(self.currency_code, self.value - other.value)
         else:
-            raise Exception("DifferentCurrencyCodeError")
+            # raise Exception("DifferentCurrencyCodeError")
+            raise DifferentCurrencyCodeError()
 
-    def __mul__(self, m):
-        return Currency(self.currency_code, (self.value) * m)
+    def __mul__(self, other):
+        if self.currency_code == other.currency_code:
+            return Currency(self.currency_code, self.value * other.value)
+        else:
+            raise DifferentCurrencyCodeError()
+
+    def __str__(self):
+        return self.currency_code + " " + str(self.value)
 
 
 class DifferentCurrencyCodeError(Exception):
